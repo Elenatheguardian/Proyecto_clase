@@ -100,3 +100,16 @@ nav li{
     background-color:#d3c5ff ;
     border-radius: 10px;
 }
+.productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-radius: 50px;
+    height: 1fr;
+background-color: aquamarine;
+margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+}

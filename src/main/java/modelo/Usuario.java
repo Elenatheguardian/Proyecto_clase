@@ -10,31 +10,33 @@ public class Usuario {
 	private String mail;
 	private String tel;
 	private int permiso;
+	private String direccion;
 	
 	
 
-	/**
-	 *  Es el paso del usuario para que pueda tener cuenta en la pagina 
-	 */
+
 	public Usuario() {
 		
 		
 	}
 	 
-	public Usuario( String nombre, String mail, String tel, int permiso) throws SQLException {
+	public Usuario( String nombre, String mail, String tel, int permiso, String direccion) throws SQLException {
 	this.nombre = nombre;
 	this.mail = mail;
 	this.tel = tel;
 	this.permiso = permiso;
+	this.direccion = direccion;
 	}
 	
-	public Usuario(int id, String nombre, String mail, String tel, int permiso) {
+	public Usuario(int id, String nombre, String mail, String tel, int permiso, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.mail = mail;
 		this.tel = tel;
 		this.permiso = permiso;
+		this.direccion = direccion;
+		
 	}
 
 	public int getid() {
@@ -64,7 +66,13 @@ public class Usuario {
 	public void setPermiso(int permiso) {
 		this.permiso =permiso;
 	}
+	public String setDireccion() {
+		return direccion;
+	}
 	
+	public int getDireccion(int direccion) {
+		return direccion;
+	}
 	/*public void obtenerPorId(int id) throws SQLException {
 		
 		DaoUsuario dao = new DaoUsuario();

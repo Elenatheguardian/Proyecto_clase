@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Conexion {
 
-	public static final String JDBC_URL ="jdbc:mysql://localhost:3306/float";
+	public static final String JDBC_URL ="jdbc:mysql://localhost:3306/proyectobullet";
 	public static Connection instance = null;
 	
 	public static Connection getConexion() throws SQLException {
