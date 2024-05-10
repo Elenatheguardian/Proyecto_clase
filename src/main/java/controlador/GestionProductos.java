@@ -43,7 +43,7 @@ public class GestionProductos extends HttpServlet {
 		float precio = Float.parseFloat(request.getParameter("Precio"));
 		
 		Producto p1= new Producto(tipo,nombre,descripcion,precio);
-		System.out.println(p1.toString());
+		//System.out.println(p1.toString());
 		
 		try {
 			p1.insertar();
@@ -51,6 +51,8 @@ public class GestionProductos extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		response.sendRedirect("anadirproductos.html");
 		
 	}
 	
