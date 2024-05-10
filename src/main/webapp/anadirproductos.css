@@ -1,0 +1,102 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color:hsl(27, 100%, 96%) ;
+}
+
+.head {
+    background-color:#DFF4FB ;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border-radius: 50px;
+    height: 150px;
+    display: flex;
+}
+.logo {
+    background-color: #DFF4FB;
+    width: 250px;
+    border-radius: 50px;
+    height: 150px;
+    
+}
+
+.logoimg{
+    width: 200px;
+    height: 150px;
+}
+.cesta{
+    background-color:#DFF4FB ;
+    border-radius: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+   
+    
+}
+.lista{
+    margin-right: 10px;
+    float:right;
+    margin-right: auto;
+    margin-bottom :20px;
+    line-height: 80px;
+    list-style: none;
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+    
+}
+nav{
+    background-color: #F8D8F0;
+     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 20;
+    
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 60px;
+    justify-content: space-evenly;
+}
+nav li{
+    display:inline
+}
+
+.barra{
+ background-color:#d3c5ff;
+ border-radius: 50px;
+ width: 80%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+ align-items: center;
+ justify-content: center;
+}
+
+.nav{
+ align-items: center;
+ justify-content: center;
+ list-style: none;
+ display: flex;
+ width: 100%;
+ justify-content: space-evenly;
+}
+.txt{
+    font-size: x-large;
+    background-color:#d3c5ff ;
+    border-radius: 10px;
+}
