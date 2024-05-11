@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+import com.mysql.cj.jdbc.result.ResultSetInternalMethods;
+
 import modelo.Producto;
 
 public class DaoProducto {
@@ -26,7 +29,7 @@ public static Connection con = null;
 		ps.setString(1, p.getTipo());
 		ps.setString(2, p.getNombre());
 		ps.setString(3, p.getDescripcion());
-		ps.setFloat(4, p.getPrecio());
+		ps.setInt(4, p.getPrecio());
 		ps.setString(5, p.getFoto());
 		
 		int filas = ps.executeUpdate();
@@ -34,14 +37,40 @@ public static Connection con = null;
 		
 	}
 	 public ArrayList<Producto> listar() throws SQLException{
-		PreparedStatement ps= con.prepareStatement("SELECT* FROM Producto");
+		PreparedStatement ps= con.prepareStatement("SELECT * FROM productos");
+		
 		 ResultSet pr = ps.executeQuery();
 		 
-		 ArrayList<Producto> result = null;
+		 ArrayList<Producto> producto = null;
 		 
-		 return result;
+		 
+		 while(pr.next());{
+		
+			 if(producto == null) {
+				 producto= new ArrayList<>();
+			 }
+			 
+		 producto.add(new Producto(pr.getInt("id"),pr.getString("nombre"), pr.getString("tipo"),pr.getString("descripcion"),pr.getString("foto"),pr.getInt("precio")));
+			 
+		 }
+		 
+		 
+		 return producto;
 	 }
-	
+
+	 public String listarJson() throws SQLException {
+			
+			String txtJSON = "";
+			
+			
+			Gson gson = new Gson();
+			
+			txtJSON = gson.toJson(this.listar());
+			
+			
+			return txtJSON;
+
+	 }
 	
 	
 	

@@ -19,4 +19,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Listar</display-name>
+    <servlet-name>Listar</servlet-name>
+    <servlet-class>controlador.Listar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Listar</servlet-name>
+    <url-pattern>/Listar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarProductos</display-name>
+    <servlet-name>ListarProductos</servlet-name>
+    <servlet-class>controlador.ListarProductos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarProductos</servlet-name>
+    <url-pattern>/ListarProductos</url-pattern>
+  </servlet-mapping>
 </web-app>

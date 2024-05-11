@@ -57,7 +57,7 @@ public class GestionProductos extends HttpServlet {
 		String tipo = request.getParameter("Tipo");
 		String nombre = request.getParameter("Nombre");
 		String descripcion = request.getParameter("Descripcion");
-		float precio = Float.parseFloat(request.getParameter("Precio"));
+		int precio = Integer.parseInt(request.getParameter("Precio"));
 		
 		Part part = request.getPart("foto");	
 		Path path = Paths.get(part.getSubmittedFileName());

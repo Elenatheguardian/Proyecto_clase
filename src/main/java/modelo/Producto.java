@@ -11,14 +11,14 @@ public class Producto {
 	private String nombre;
 	private String descripcion;
 	private String foto;
-	private Float precio;
+	private int precio;
 	
 	public Producto() {
 		
 	}
 	
 	
-	public Producto(String tipo, String nombre, String descripcion, Float precio) {
+	public Producto(String tipo, String nombre, String descripcion, int precio) {
 		super();
 		this.tipo = tipo;
 		this.nombre = nombre;
@@ -27,7 +27,7 @@ public class Producto {
 	}
 
 
-	public Producto(int id, String tipo, String nombre, String descripcion, Float precio) {
+	public Producto(int id, String tipo, String nombre, String descripcion, int precio) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -37,7 +37,7 @@ public class Producto {
 	}
 
 
-	public Producto(String tipo, String nombre, String descripcion, String foto, Float precio) {
+	public Producto(String tipo, String nombre, String descripcion, String foto, int precio) {
 		super();
 		this.tipo = tipo;
 		this.nombre = nombre;
@@ -47,7 +47,7 @@ public class Producto {
 	}
 
 
-	public Producto(int id, String tipo, String nombre, String descripcion, String foto, Float precio) {
+	public Producto(int id, String tipo, String nombre, String descripcion, String foto, int precio) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -98,11 +98,11 @@ public class Producto {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	public Float getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 	
-	public void setPrecio(Float precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
