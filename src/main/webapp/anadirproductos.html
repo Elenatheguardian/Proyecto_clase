@@ -36,13 +36,13 @@
         <div class="productos">
 
         <h1> Producto </h1>
-        <form name="Productos" action="GestionProductos" method="post">
+        <form name="Productos" action="GestionProductos" method="post" enctype="multipart/form-data">
             <ul>
                 <li><label>Tipo de Producto:</label><select name="Tipo"><option value="agenda">Agenda</option><option value="papeleria">Papelería</option></select></li>
                 <li><label> Nombre:</label> <input type="text" name="Nombre"> </li>
                 <li><label> Descripción:</label> <textarea name="Descripcion"></textarea> </li>
-                <li><label> Precio:</label> <input type="number" name="Precio"> </li>
-                <!--<li><label> Foto:</label> <input type="file" name="foto"> </li>-->
+                <li><label> Precio:</label> <input type="number" name="Precio" step="any"> </li>
+                <li><label> Foto:</label> <input type="file" name="foto"> </li>
                 <li><label> </label> <input type="submit" name="Guardar"> </li>
             </ul>
     
