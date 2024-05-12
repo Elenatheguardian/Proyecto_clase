@@ -116,7 +116,7 @@ public class Producto {
 	public void insertar() throws SQLException {	
 		
 		DaoProducto dao = new DaoProducto();
-		dao.Insertar(this);
+		dao.insertar(this);
 	}
 	
 	

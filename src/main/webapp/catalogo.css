@@ -161,9 +161,7 @@ a:visited{
     margin-right:auto;
    
    
-}
-
-.productos{
+}.productos{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 90%;
@@ -212,3 +210,5 @@ a:visited{
     text-align: center;
   
 }
+
+

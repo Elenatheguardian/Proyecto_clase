@@ -22,7 +22,7 @@ public static Connection con = null;
 	}
 	
 	
-	public void Insertar(Producto p) throws SQLException {
+	public void insertar(Producto p) throws SQLException {
 		
 		String sql = "INSERT INTO productos (tipo, nombre,descripcion,precio,foto) VALUES (?,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
