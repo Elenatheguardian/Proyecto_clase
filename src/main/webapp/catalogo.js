@@ -40,7 +40,7 @@ function listarprod(productos) {
 }
 if(datosProductos){
 	datosProductos.forEach(function(productos){
-		generarnoticias(productos);
+		listarprod(productos);
 	})
 }else{
 	console.error("No se pudo obtener el producto")

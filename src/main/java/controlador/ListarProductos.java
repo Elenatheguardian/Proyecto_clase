@@ -38,14 +38,14 @@ public class ListarProductos extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			DaoProducto dao = new DaoProducto();
 			String resultados = dao.listarJson();
-			System.out.println(resultados);
+			System.out.println("hola"+resultados);
 
 			out.print(resultados);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+	
 	}
 
 	/**

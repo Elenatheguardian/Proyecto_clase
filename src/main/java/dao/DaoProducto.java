@@ -36,6 +36,7 @@ public static Connection con = null;
 		ps.close();
 		
 	}
+	//** Estoy insertando los productos del html productos haciendo que pueda ejecutar en bd más adelante*/
 	 public ArrayList<Producto> listar() throws SQLException{
 		PreparedStatement ps= con.prepareStatement("SELECT * FROM productos");
 		
@@ -43,20 +44,22 @@ public static Connection con = null;
 		 
 		 ArrayList<Producto> producto = null;
 		 
-		 
-		 while(pr.next());{
+ //**Estoy usando el metodo para que busque en la base de datos en la lista del producto si es nula, pero si lo es se inicia el Aray*/
+		 while(pr.next())
+		 {
 		
 			 if(producto == null) {
 				 producto= new ArrayList<>();
 			 }
-			 
+	
 		 producto.add(new Producto(pr.getInt("id"),pr.getString("nombre"), pr.getString("tipo"),pr.getString("descripcion"),pr.getString("foto"),pr.getInt("precio")));
 			 
 		 }
 		 
-		 
+		
 		 return producto;
 	 }
+	 //** Esoy usando el arraylist para poder hacer una lista de los productos que he insertado antenriormente y poder guardar en la base de datos*/
 
 	 public String listarJson() throws SQLException {
 			
@@ -71,7 +74,7 @@ public static Connection con = null;
 			return txtJSON;
 
 	 }
-	
+	//**Aquí he puesto el metodo json para más adelante poder agregar, eliminar o modificar.*/
 	
 	
 }
