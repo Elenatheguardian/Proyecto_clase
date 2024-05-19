@@ -106,3 +106,108 @@ body {
     background-color:#d3c5ff ;
     border-radius: 10px;
 }
+.galeria {
+    display: flex;
+    width: 80%;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+.fotos{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 8;
+    transition: 0.5s ease;
+    
+}
+.fotos:hover{
+    cursor:crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+#izq{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+#der{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.catalogo{
+    background: #fdd3f3;
+    border:4px solid black;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-top: 40px;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+   
+   
+}.productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    height: 250px; 
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: rgb(169, 250, 250);
+    border: 4px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.fotos1{
+    height: 250px;
+    max-width: 200px;
+    right: 100%;
+    border-radius: 18px;
+    grid-column: 1;
+}
+
+.titulo{
+    grid-column: 2;
+    grid-row: 1;
+
+}
+
+.descripcion{
+    grid-column: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: top;
+    grid-row: 1;
+
+}
+
+.precio{
+    grid-column: 2;
+    grid-row: 1;
+    
+}
+
+.titulo{
+    text-align: center;
+  
+}
+

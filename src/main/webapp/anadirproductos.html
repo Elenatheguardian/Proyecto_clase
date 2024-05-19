@@ -2,53 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir productos</title>
-    <link rel="stylesheet" href="anadirproductos.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Añadir productos</title>
+	<link rel="stylesheet" href="anadirproductos.css">
 </head>
 
 
 <body>
 
-    <section class="head">
-        <div class="logo">
-            <img class="logoimg" src="image/Logo.png" alt="Logo">
-        </div>
-        <div class="cesta">
-            <ul class="lista">
-                <li class="txt"> <a href="login.html"> Log In</a></li>
-                <li class="txt"> <a href="guardados.html">Guardados</a></li>
-                <li class="txt"> <a href="cesta.htm">Cesta</a> </li>
-            </ul>
-        </div>
-    </section>
-    <div class="barra">
-        <ul class="nav">
-            <li class="txt"><a href="index.html">Inicio</a></li>
-            <li class="txt"><a href="catalogo.html">Catálogo</a></li>
-            <li class="txt"><a href="agendas.html">Agendas</a></li>
-            <li class="txt"><a href="papeleria.html">Papeleria</a></li>
-        </ul>
-    </div>
+	<section class="head">
+		<div class="logo">
+			<img class="logoimg" src="image/Logo.png" alt="Logo">
+		</div>
+		<div class="cesta">
+			<ul class="lista">
+				<li class="txt" id="sesion"><a href="login.html"> Iniciar sesion </a></li>
+				<li class="txt" id="cerrar"><a href="index.html"> Cerrar </a></li>
+				<li class="txt" id="admin"><a href="registroUsuario.html"> Registrar Administradores </a></li>
+				<li class="txt" id="productos"><a href="anadirproductos.html"> Añadir </a></li>
+				<li class="txt">Cesta</li>
+			</ul>
+		</div>
+	</section>
 
-    <section>
-        <div class="productos">
+	<div class="barra">
+		<ul class="nav">
+			<li class="txt"><a href="index.html">Inicio</a></li>
+			<li class="txt"><a href="catalogo.html">Catálogo</a></li>
+			<li class="txt"><a href="agendas.html">Agendas</a></li>
+			<li class="txt"><a href="papeleria.html">Papeleria</a></li>
+		</ul>
+	</div>
 
-        <h1> Producto </h1>
-        <form name="Productos" action="GestionProductos" method="post" enctype="multipart/form-data">
-            <ul>
-                <li><label>Tipo de Producto:</label><select name="Tipo"><option value="agenda">Agenda</option><option value="papeleria">Papelería</option></select></li>
-                <li><label> Nombre:</label> <input type="text" name="Nombre"> </li>
-                <li><label> Descripción:</label> <textarea name="Descripcion"></textarea> </li>
-                <li><label> Precio:</label> <input type="number" name="Precio" step="any"> </li>
-                <li><label> Foto:</label> <input type="file" name="foto"> </li>
-                <li><label> </label> <input type="submit" name="Guardar"> </li>
-            </ul>
-    
-        </form>
-    </div>
-    </section>
+	<section class="Frase">
+
+		<div class="Frase">
+
+			<p> Recuerda: Ir despacio te puede llevar a las metas mas grandes.</p>
+		</div>
+
+	</section>
+
+	<section>
+		<div class="productos">
+
+			<h1> Producto </h1>
+			<form name="Productos" action="GestionProductos" method="post" enctype="multipart/form-data">
+				<ul>
+					<li><input type="hidden" id="id" name="id"></li>
+					<li><label> Nombre:</label> <input type="text" id="nombre" name="Nombre"> </li>
+					<li><label>Tipo de Producto:</label><select id="tipo" name="Tipo">
+							<option value="agenda">Agenda</option>
+							<option value="papeleria">Papelería</option>
+						</select></li>
+					<li><label> Descripción:</label> <textarea id="descripcion" name="Descripcion"> </textarea> </li>
+					<li><label> Precio:</label> <input id="precio" type="number" name="Precio"> </li>
+					<li><label> Foto:</label> <input type="file" id="foto" name="foto"> </li>
+					<li><label> </label> <input type="submit" name="Guardar"> </li>
+				</ul>
+
+			</form>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+	<script src="anadirproductos.js"></script>
 </body>
 
 </html>

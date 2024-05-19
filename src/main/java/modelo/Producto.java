@@ -2,13 +2,15 @@ package modelo;
 
 import java.sql.SQLException;
 
+import com.google.gson.Gson;
+
 import dao.DaoProducto;
 
 public class Producto {
 
 	private int id;
-	private String tipo; 
 	private String nombre;
+	private String tipo; 
 	private String descripcion;
 	private String foto;
 	private int precio;
@@ -18,16 +20,16 @@ public class Producto {
 	}
 	
 	
-	public Producto(String tipo, String nombre, String descripcion, int precio) {
+	public Producto( String nombre, String tipo, String descripcion, int precio) {
 		super();
-		this.tipo = tipo;
 		this.nombre = nombre;
+		this.tipo = tipo;
 		this.descripcion = descripcion;
 		this.precio = precio;
 	}
 
 
-	public Producto(int id, String tipo, String nombre, String descripcion, int precio) {
+	public Producto(int id,  String nombre,String tipo, String descripcion, int precio) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -37,26 +39,35 @@ public class Producto {
 	}
 
 
-	public Producto(String tipo, String nombre, String descripcion, String foto, int precio) {
+	public Producto( String nombre, String tipo, String descripcion, String foto, int precio) {
 		super();
-		this.tipo = tipo;
 		this.nombre = nombre;
+		this.tipo = tipo;
 		this.descripcion = descripcion;
 		this.foto = foto;
 		this.precio = precio;
 	}
 
 
-	public Producto(int id, String tipo, String nombre, String descripcion, String foto, int precio) {
+	public Producto(int id, String nombre, String tipo, String descripcion, String foto, int precio) {
 		super();
 		this.id = id;
-		this.tipo = tipo;
 		this.nombre = nombre;
+		this.tipo = tipo;
 		this.descripcion = descripcion;
 		this.foto = foto;
 		this.precio = precio;
 	}
-
+	
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 
 	public String getNombre() {
 		return nombre;
@@ -67,14 +78,7 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
+
 	public String getTipo() {
 		return tipo;
 	}
@@ -109,7 +113,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", tipo=" + tipo + ", nombre=" + nombre + ", descripcion=" + descripcion
+		return "Producto [id=" + id + ", nombre=" + nombre + ", tipo=\" + tipo + \", descripcion=" + descripcion
 				+ ", foto=" + foto + ", precio=" + precio + "]";
 	}
 	
@@ -121,5 +125,45 @@ public class Producto {
 	
 	
 	
-}
+
 	
+public void datosBD(int id) throws SQLException {
+	DaoProducto dao = new DaoProducto();
+    Producto aux = dao.obtenerPorId(id);
+    System.out.println("hola333"+aux);
+    this.setId(aux.getId());
+    this.setNombre(aux.getNombre());
+    this.setTipo(aux.getTipo());
+    this.setDescripcion(aux.getDescripcion());
+    this.setFoto(aux.getFoto());
+    this.setPrecio(aux.getPrecio());
+}
+
+
+
+public void editar() throws SQLException {
+    DaoProducto dao = new DaoProducto();
+    dao.productosEditar(this);
+}
+
+public void borrar(int id) throws SQLException {
+    DaoProducto dao = new DaoProducto();
+    dao.productosBorrar(id);
+}
+
+public String dameJson() {
+    String json = "";
+    Gson gson = new Gson();
+
+    json = gson.toJson(this);
+    return json;
+}
+
+
+
+
+
+
+
+
+}

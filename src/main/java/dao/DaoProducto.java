@@ -24,19 +24,19 @@ public static Connection con = null;
 	
 	public void insertar(Producto p) throws SQLException {
 		
-		String sql = "INSERT INTO productos (tipo, nombre,descripcion,precio,foto) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO productos (nombre, tipo, precio, descripcion,foto) VALUES (?,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, p.getTipo());
-		ps.setString(2, p.getNombre());
-		ps.setString(3, p.getDescripcion());
-		ps.setInt(4, p.getPrecio());
+		ps.setString(1, p.getNombre());
+		ps.setString(2, p.getTipo());
+		ps.setInt(3, p.getPrecio());
+		ps.setString(4, p.getDescripcion());
 		ps.setString(5, p.getFoto());
 		
 		int filas = ps.executeUpdate();
 		ps.close();
 		
 	}
-	//** Estoy insertando los productos del html productos haciendo que pueda ejecutar en bd más adelante*/
+
 	 public ArrayList<Producto> listar() throws SQLException{
 		PreparedStatement ps= con.prepareStatement("SELECT * FROM productos");
 		
@@ -44,7 +44,7 @@ public static Connection con = null;
 		 
 		 ArrayList<Producto> producto = null;
 		 
- //**Estoy usando el metodo para que busque en la base de datos en la lista del producto si es nula, pero si lo es se inicia el Aray*/
+
 		 while(pr.next())
 		 {
 		
@@ -59,7 +59,6 @@ public static Connection con = null;
 		
 		 return producto;
 	 }
-	 //** Esoy usando el arraylist para poder hacer una lista de los productos que he insertado antenriormente y poder guardar en la base de datos*/
 
 	 public String listarJson() throws SQLException {
 			
@@ -74,7 +73,69 @@ public static Connection con = null;
 			return txtJSON;
 
 	 }
-	//**Aquí he puesto el metodo json para más adelante poder agregar, eliminar o modificar.*/
-	
+	 public ArrayList<Producto> papeleria() throws SQLException{
+			PreparedStatement ps= con.prepareStatement("SELECT * FROM productos");
+			
+			 ResultSet pr = ps.executeQuery();
+			 
+			 ArrayList<Producto> producto = null;
+
+			 while(pr.next())
+			 {
+			
+				 if(producto == null) {
+					 producto= new ArrayList<>();
+				 }
+		
+			 producto.add(new Producto(pr.getInt("id"),pr.getString("nombre"), pr.getString("tipo"),pr.getString("descripcion"),pr.getString("foto"),pr.getInt("precio")));
+				 
+			 }
+			 
+			
+			 return producto;
+		 }
+	 public Producto obtenerPorId(int id) throws SQLException {
+
+         String sql = "SELECT * FROM productos WHERE id=?";
+         PreparedStatement ps = con.prepareStatement(sql);
+         ps.setInt(1, id);
+
+         ResultSet rs = ps.executeQuery();
+
+         rs.next();
+         
+         System.out.println("tutututrqwtreqt");
+         Producto s = new Producto(rs.getInt(1),rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5), rs.getInt(6));
+         System.out.println("holi"+s);
+         return s;
+     }
+
+
+     public void productosEditar(Producto s) throws SQLException {
+         String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, foto = ?, precio = ?  WHERE id = ?";
+         PreparedStatement ps = con.prepareStatement(sql);
+
+         ps.setString(1, s.getNombre());
+         ps.setString(2, s.getTipo());
+         ps.setString(3, s.getDescripcion());
+         ps.setString(4, s.getFoto());
+         ps.setInt(5, s.getPrecio());
+         ps.setInt(6, s.getId());
+         
+         int filas = ps.executeUpdate();
+         ps.close();
+     }
+
+     public void productosBorrar (int id) throws SQLException {
+         String sql = "DELETE FROM productos WHERE id=?";
+         PreparedStatement ps = con.prepareStatement(sql);
+
+         ps.setInt(1, id);
+         int filas = ps.executeUpdate();
+         ps.close();
+     }
+	 
+	 
+	 
 	
 }

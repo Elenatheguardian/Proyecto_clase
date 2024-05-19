@@ -54,10 +54,13 @@ public class GestionProductos extends HttpServlet {
 		
 		
 		private void insertar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String tipo = request.getParameter("Tipo");
 		String nombre = request.getParameter("Nombre");
+		String tipo = request.getParameter("Tipo");
 		String descripcion = request.getParameter("Descripcion");
 		int precio = Integer.parseInt(request.getParameter("Precio"));
+		
+		String idP = request.getParameter("id");
+        int id = 0; 
 		
 		Part part = request.getPart("foto");	
 		Path path = Paths.get(part.getSubmittedFileName());
@@ -69,15 +72,26 @@ public class GestionProductos extends HttpServlet {
 
 		Files.copy(input,file.toPath());
 		
+		if (idP != null && !idP.isEmpty()) {
+            id = Integer.parseInt(idP);
+            
+        }
 		
-		Producto p1= new Producto(tipo, nombre, descripcion, fileName, precio);
+		
+		Producto p1= new Producto(id, nombre, tipo, descripcion, fileName, precio);
 		
 		try {
-			p1.insertar();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            if(id == 0) {
+                p1.insertar();
+            }else {
+            	
+                p1.setId(id);
+                p1.editar();
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 		
 		response.sendRedirect("anadirproductos.html");
 		

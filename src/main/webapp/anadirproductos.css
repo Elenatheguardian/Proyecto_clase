@@ -4,11 +4,11 @@
 }
 
 body {
-    background-color:hsl(27, 100%, 96%) ;
+    background-color: hsl(27, 100%, 96%);
 }
 
 .head {
-    background-color:#DFF4FB ;
+    background-color: #DFF4FB;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -17,20 +17,22 @@ body {
     height: 150px;
     display: flex;
 }
+
 .logo {
     background-color: #DFF4FB;
     width: 250px;
     border-radius: 50px;
     height: 150px;
-    
+
 }
 
-.logoimg{
+.logoimg {
     width: 200px;
     height: 150px;
 }
-.cesta{
-    background-color:#DFF4FB ;
+
+.cesta {
+    background-color: #DFF4FB;
     border-radius: 50px;
     width: 80%;
     margin-left: auto;
@@ -39,32 +41,35 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-   
-    
+
+
 }
-.lista{
+
+.lista {
     margin-right: 10px;
-    float:right;
+    float: right;
     margin-right: auto;
-    margin-bottom :20px;
+    margin-bottom: 20px;
     line-height: 80px;
     list-style: none;
     display: flex;
     width: 30%;
     justify-content: space-evenly;
-    
+
 }
-nav{
+
+nav {
     background-color: #F8D8F0;
-     width: 80%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
     border-radius: 60px;
     text-align: center;
     line-height: 20;
-    
+
 }
+
 nav ul {
     margin: 0;
     padding: 0;
@@ -72,35 +77,38 @@ nav ul {
     line-height: 60px;
     justify-content: space-evenly;
 }
-nav li{
-    display:inline
+
+nav li {
+    display: inline
 }
 
-.barra{
- background-color:#d3c5ff;
- border-radius: 50px;
- width: 80%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
- align-items: center;
- justify-content: center;
+.barra {
+    background-color: #d3c5ff;
+    border-radius: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav{
- align-items: center;
- justify-content: center;
- list-style: none;
- display: flex;
- width: 100%;
- justify-content: space-evenly;
+.nav {
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
-.txt{
+
+.txt {
     font-size: x-large;
-    background-color:#d3c5ff ;
+    background-color: #d3c5ff;
     border-radius: 10px;
 }
-.productos{
+
+.productos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,9 +116,9 @@ nav li{
     width: 80%;
     border-radius: 50px;
     height: 1fr;
-background-color: aquamarine;
-margin-left: auto;
- margin-right: auto;
- margin-top: 20px;
- list-style: none;
+    background-color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    list-style: none;
 }

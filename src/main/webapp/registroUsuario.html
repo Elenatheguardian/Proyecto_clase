@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="registroUsuario.css">
 </head>
 
 
 <body>
 
-    <section class="head">
+      <section class="head">
         <div class="logo">
             <img class="logoimg" src="image/Logo.png" alt="Logo">
         </div>
@@ -25,7 +25,7 @@
             </ul>
         </div>
     </section>
-
+   
     <div class="barra">
         <ul class="nav">
             <li class="txt"><a href="index.html">Inicio</a></li>
@@ -34,25 +34,40 @@
             <li class="txt"><a href="papeleria.html">Papeleria</a></li>
         </ul>
     </div>
-    <section class="galeria">
-        <img class="fotos" id="izq" src="image/Libretas/libreta_paisaje.jpeg" alt=" Libreta paisaje">
-        <img class="fotos" src="image/Libretas/libretadegirasol.jpeg" alt=" Libreta de girasol">
-        <img class="fotos" src="image/Ideas/bullet1.jpeg" alt=" Imagen de inspiración">
-        <img class="fotos" src="image/Ideas/bullet2.jpeg" alt=" Imagen de inspiración bonitas">
-        <img class="fotos" src="image/Cintas/cintascolores.jpeg" alt=" Cinta adesiva de colores">
-        <img class="fotos" src="image/Cintas/cute tapes!.jpeg" alt=" Cintas bonitas">
-        <img class="fotos" src="image/Bolis/bolispastel.jpeg" alt=" Paquete de boligrafos color pastel">
-        <img class="fotos" id="der" src="image/Bolis/Lapiceros de ositos .jpeg" alt=" Bolis de osos">
+    <section>
+        <h1>Registro de Administradores</h1>
+        <form name="registroUsuario" action="GestionUsuarios" method="post" id="registro">
+
+            <ul>
+                <input type="hidden" id="id" name="id">
+                <input type="hidden" id="permiso" name="permiso" value="7">
+                <li><label>Nombre</label><input id="nombre" type="text" name="nombre"></li>
+                <li><label>Mail</label><input id="mail" type="email" name="mail"></li>
+                <li><label>Teléfono</label><input id="tel" type="text" name="tel"></li>
+                <li><label>Dirección</label><input id="direccion" type="text" name="direccion"></li>
+                <li><label>Contraseña</label><input id="contrasena" type="text" name="pass"></li>
+                <li><input type="submit" id="confirmar" value="Guardar"></li>
+
+            </ul>
+
+
+
+
+        </form>
+
 
     </section>
 
+    <script src="registroUsuario.js"></script>
+    
+    
+    
     <section class="Frase">
         <div class="Frase">
-            <p> Confia en tu capacidad de volver realidad tus sueños. No te rindas que la vida es solo una :)</p>
+            <p> Sin agua no hay flores hermosas</p>
         </div>
     </section>
-    
-    <script src="index.js"></script>
+    <script src="registroUsuario.js"></script>
 </body>
 
 </html>

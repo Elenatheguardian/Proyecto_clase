@@ -38,7 +38,6 @@ public class ListarProductos extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			DaoProducto dao = new DaoProducto();
 			String resultados = dao.listarJson();
-			System.out.println("hola"+resultados);
 
 			out.print(resultados);
 

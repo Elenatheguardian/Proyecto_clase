@@ -1,34 +1,57 @@
 package modelo;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import com.google.gson.*;
 import dao.DaoUsuario;
+
 public class Usuario {
-	
+
 	private int id;
 	private String nombre;
 	private String mail;
-	private String tel;
+	private int tel;
 	private int permiso;
 	private String direccion;
-	
-	
 
 
 	public Usuario() {
-		
-		
-	}
-	 
-	public Usuario( String nombre, String mail, String tel, int permiso, String direccion) throws SQLException {
-	this.nombre = nombre;
-	this.mail = mail;
-	this.tel = tel;
-	this.permiso = permiso;
-	this.direccion = direccion;
+
 	}
 	
-	public Usuario(int id, String nombre, String mail, String tel, int permiso, String direccion) {
+	
+	
+	public Usuario(int id, String nombre, String mail, int tel, String direccion) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.mail = mail;
+		this.tel = tel;
+		this.direccion = direccion;
+	}
+
+
+
+	public Usuario(String nombre, String mail, int tel, String direccion) {
+		super();
+		this.nombre = nombre;
+		this.mail = mail;
+		this.tel = tel;
+		this.direccion = direccion;
+	}
+
+
+	public Usuario(String nombre, String mail, int tel, int permiso, String direccion) throws SQLException {
+		this.nombre = nombre;
+		this.mail = mail;
+		this.tel = tel;
+		this.permiso = permiso;
+		this.direccion = direccion;
+	}
+
+	public Usuario(int id, String nombre, String mail, int tel, int permiso, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -36,100 +59,146 @@ public class Usuario {
 		this.tel = tel;
 		this.permiso = permiso;
 		this.direccion = direccion;
-		
+
 	}
 
-	public int getid() {
+	public int getId() {
 		return id;
 	}
-		
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
-		this.nombre =nombre;
-	
+		this.nombre = nombre;
 	}
+
 	public String getMail() {
 		return mail;
 	}
-	public void setTel(String tel) {
-		this.tel=tel;
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
-	public int getPermiso(int permiso) {
+
+	public int getTel() {
+		return tel;
+	}
+
+	public void setTel(int tel) {
+		this.tel = tel;
+	}
+
+	public int getPermiso() {
 		return permiso;
-		
 	}
+
 	public void setPermiso(int permiso) {
-		this.permiso =permiso;
+		this.permiso = permiso;
 	}
-	public String setDireccion() {
+
+	public String getDireccion() {
 		return direccion;
 	}
-	
-	public int getDireccion(int direccion) {
-		return direccion;
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
-	/*public void obtenerPorId(int id) throws SQLException {
-		
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", mail=" + mail + ", tel=" + tel + ", permiso=" + permiso
+				+ ", direccion=" + direccion + "]";
+	}
+
+	public void insertarUs() throws SQLException {
+
 		DaoUsuario dao = new DaoUsuario();
-		Usuario aux= dao.obtenerPorID(id);
-		
-		this.setId(aux getId());
-		this.setNombre(aux.getNombre());
-		this.setTel(aux.getMail());
-		this.setPermiso(aux.getPermiso());
+		dao.insertarUs(this);
 	}
 	
-	public boolean logeo(String pass) throws SQLException{
-		boolean ok = false;
-		DaoUsuario dao = new DaoUsuario();
-		Usuario aux= dao.logeando(this, pass); // db
-		
-		if(aux != null) {
-			ok=true;
-			this.setId(aux.getId());
-			this.setNombre(aux.getNombre());
-			this.setTel(aux.getTel());
-			this.setMail(aux.getMail());
-			this.setPermiso(aux.getPermiso());
-		}
-			return ok;
-		}
+	public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+	
+	public void guardarPass(String pass) throws SQLException {
+        DaoUsuario dao = new DaoUsuario();
+        dao.guardarPass(this, pass);
+    }
+	
+	
 	public String dameJson() {
 		String json = "";
 		
-		Gson gson= new Gson();
+		Gson gson = new Gson();
 		
 		json = gson.toJson(this);
-		
 		return json;
-			
 	}
-	public void borrar(int id) throws SQLException{
+	
+	
+	public void borrarAdmin(int id) throws SQLException {
 		DaoUsuario dao = new DaoUsuario();
-		dao.borrar(id);
-		
+		dao.borrarAdmin(id);
 	}
-	public String toString() {
-		return "Usuario [id=" +id +", nombre="+ nombre +", mail=" +mail+", permiso=" +permiso +"]";
-		
-	}*/
+
+	
+	  public void recogerPorId(int id) throws SQLException {
+	  
+	  DaoUsuario dao = new DaoUsuario();
+	  Usuario aux= dao.recogerPorId(id);
+
+	  this.setId(aux.getId()); 
+	  this.setNombre(aux.getNombre());
+	  this.setMail(aux.getMail()); 
+	  this.setTel(aux.getTel());
+	  this.setDireccion(aux.getDireccion()); 
+	  
+	  }
+	  
+	  public void editar() throws SQLException {
+		  System.out.println("aqui");
+		  DaoUsuario dao = new DaoUsuario();
+		  dao.editar(this);
+	  }
+	  
+	  public boolean inicioSesion(String passcifrada) throws SQLException {
+
+	        boolean bien = false;
+
+	        DaoUsuario dao = new DaoUsuario();
+	        Usuario aux = dao.inicioSesion(this, passcifrada);
+
+	        if(aux != null) {
+	            bien = true;
+	            this.setId(aux.getId());
+	            this.setNombre(aux.getNombre());
+	            this.setMail(aux.getMail());
+	            this.setPermiso(aux.getPermiso());
+
+	        }
+
+	        return bien;
+
+	    }
+	  
 	
 	
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

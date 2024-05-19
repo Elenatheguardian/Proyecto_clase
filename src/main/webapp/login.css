@@ -4,11 +4,12 @@
 }
 
 body {
-    background-color:hsl(27, 100%, 96%) ;
+    background-color: hsl(27, 100%, 96%);
 }
 
 .head {
-    background-color:#DFF4FB ;
+    background-color: #DFF4FB;
+    ;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +17,7 @@ body {
     border-radius: 50px;
     height: 150px;
     display: flex;
-   
+
 }
 
 .logo {
@@ -24,16 +25,16 @@ body {
     width: 250px;
     border-radius: 50px;
     height: 150px;
-    
+
 }
 
-.logoimg{
+.logoimg {
     width: 200px;
     height: 150px;
 }
 
-.cesta{
-    background-color:#DFF4FB ;
+.cesta {
+    background-color: #DFF4FB;
     border-radius: 50px;
     width: 80%;
     margin-left: auto;
@@ -42,47 +43,50 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-   
-    
+
+
 }
-.lista{
+
+.lista {
     margin-right: 10px;
-    float:right;
+    float: right;
     margin-right: auto;
-    margin-bottom :20px;
+    margin-bottom: 20px;
     line-height: 80px;
     list-style: none;
     display: flex;
     width: 30%;
     justify-content: space-evenly;
-    
+    ;
 }
 
-  
-   nav{
-       background-color: #F8D8F0;
-        width: 80%;
-       margin-left: auto;
-       margin-right: auto;
-       margin-top: 30px;
-       border-radius: 60px;
-       text-align: center;
-       line-height: 20;
-       
-   }
-   nav ul {
-       margin: 0;
-       padding: 0;
-       list-style: none;
-       line-height: 60px;
-       justify-content: space-evenly;
-   }
-   nav li{
-       display:inline
-   }
-   
-   .barra{
-    background-color:#d3c5ff;
+
+nav {
+    background-color: #F8D8F0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 20;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 60px;
+    justify-content: space-evenly;
+}
+
+nav li {
+    display: inline
+}
+
+.barra {
+    background-color: #d3c5ff;
     border-radius: 50px;
     width: 80%;
     margin-left: auto;
@@ -92,7 +96,7 @@ body {
     justify-content: center;
 }
 
-.nav{
+.nav {
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -101,8 +105,69 @@ body {
     justify-content: space-evenly;
 }
 
-.txt{
+.txt {
     font-size: x-large;
-    background-color:#d3c5ff ;
     border-radius: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+#sesion {
+    width: 80%;
+    background-color: hsl(27, 100%, 96%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    border-radius: 50px;
+        
+}
+
+.registrar {
+    background-color: #d3c5ff;
+    border-radius: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    border: 4px solid black;
+    
+}
+
+.registrar li {
+    list-style: none;
+    max-height: fit-content;
+    margin-bottom: 5px;
+    text-align: justify;
+    text-align: center;
+   
+}
+
+.iniciar {
+    background-color: rgb(211, 197, 255);
+    border-radius: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    border: 4px solid black;
+   
+}
+
+.iniciar li {
+    list-style: none;
+    margin-bottom: 10px;
+    max-height: fit-content;
+     text-align: center;
+}    
