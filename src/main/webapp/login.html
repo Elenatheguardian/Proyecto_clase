@@ -10,7 +10,6 @@
 
 
 <body>
-
 	<section class="head">
 		<div class="logo">
 			<img class="logoimg" src="image/Logo.png" alt="Logo">
@@ -34,10 +33,9 @@
 			<li class="txt"><a href="papeleria.html">Papeleria</a></li>
 		</ul>
 	</div>
-
-	<section id="sesion">
+	<section id="sesion" class="registro1-class">
 		<div class="registrar">
-			<h1> Registrar</h1>
+			<h1>Registrar</h1>
 			<form name="Registro" action="GestionUsuarios" method="post">
 				<ul>
 					<input type="hidden" name="permiso" value="1">
@@ -46,9 +44,8 @@
 					<li><label>Mail:</label><input type="text" name="mail"></li>
 					<li><label>Contraseña:</label><input type="text" name="pass"></li>
 					<li><label>Dirección:</label><input type="text" name="direccion"></li>
-					<li><label>Tel:</label><input type="text" name="tel"></li>
-					<li><label></label><input type="submit" name="registrar"> </li>
-
+					<li><label>Teléfono:</label><input type="text" name="tel"></li>
+					<li><input type="submit" name="registrar" value="Registrar"></li>
 				</ul>
 			</form>
 		</div>
@@ -58,14 +55,12 @@
 				<ul>
 					<li><label>Mail:</label><input type="text" name="mail"></li>
 					<li><label>Contraseña:</label><input type="text" name="pass"></li>
-					<li><label></label><input type="submit" name="iniciar"> </li>
+					<li><input type="submit" name="iniciar" value="Iniciar Sesión"></li>
 				</ul>
 			</form>
 		</div>
-
 	</section>
 
-	
 	<script src="login.js"></script>
 </body>
 

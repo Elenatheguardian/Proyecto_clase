@@ -1,108 +1,167 @@
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color:hsl(27, 100%, 96%) ;
+    background-color: #faf3f5 ;
 }
 
 .head {
-    background-color:#DFF4FB ;
+    background-color: #DFF4FB;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
+    margin: 25px auto;
     border-radius: 50px;
     height: 150px;
     display: flex;
+    align-items: center;
    
 }
 
 .logo {
-    background-color: #DFF4FB;
     width: 250px;
-    border-radius: 50px;
     height: 150px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.logoimg{
+.logoimg {
     width: 200px;
     height: 150px;
 }
 
-.cesta{
-    background-color:#DFF4FB ;
+.cesta {
+    background-color: #DFF4FB;
     border-radius: 50px;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-   
-    
-}
-.lista{
-    margin-right: 10px;
-    float:right;
-    margin-right: auto;
-    margin-bottom :20px;
-    line-height: 80px;
-    list-style: none;
+    margin: 20px auto;
     display: flex;
-    width: 30%;
-    justify-content: space-evenly;
-    
-}
-
-  
-   nav{
-       background-color: #F8D8F0;
-        width: 80%;
-       margin-left: auto;
-       margin-right: auto;
-       margin-top: 30px;
-       border-radius: 60px;
-       text-align: center;
-       line-height: 20;
-       
-   }
-   nav ul {
-       margin: 0;
-       padding: 0;
-       list-style: none;
-       line-height: 60px;
-       justify-content: space-evenly;
-   }
-   nav li{
-       display:inline
-   }
-   
-   .barra{
-    background-color:#d3c5ff;
-    border-radius: 50px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
     align-items: center;
     justify-content: center;
 }
 
-.nav{
-    align-items: center;
-    justify-content: center;
-    list-style: none;
+.lista {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
 }
 
-.txt{
+nav {
+    background-color: #faf3f5;
+    width: auto;
+    margin: 20px auto;
+    border-radius: 60px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+.barra {
+    background-color: #d3c5ff;
+    border-radius: 50px;
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.txt {
     font-size: x-large;
-    background-color:#d3c5ff ;
     border-radius: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+#listaU {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #d3c5ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+#Listar {
+    padding: 10px;
+}
+
+.usuario {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.usuario .nombre {
+    font-size: 18px;
+    color: #0c0c0c;
+}
+.usuario .acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.usuario .acciones button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.usuario .acciones button.editar {
+    background-color: #f973de;
+    color: white;
+}
+
+.usuario .acciones button.eliminar {
+    background-color: #f973de;
+    color: white;
+}
+
+.usuario .acciones button:hover {
+    opacity: 0.8;
+}
+
+

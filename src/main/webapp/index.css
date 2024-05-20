@@ -4,11 +4,11 @@
 }
 
 body {
-    background-color:hsl(27, 100%, 96%) ;
+    background-color: #faf3f5 ;
 }
 
 .head {
-    background-color:#DFF4FB ;
+    background-color: #DFF4FB;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +16,9 @@ body {
     border-radius: 50px;
     height: 150px;
     display: flex;
-   
+    align-items: center;
+ 
+
 }
 
 .logo {
@@ -24,16 +26,17 @@ body {
     width: 250px;
     border-radius: 50px;
     height: 150px;
-    
+    align-items: center;
+
 }
 
-.logoimg{
+.logoimg {
     width: 200px;
     height: 150px;
 }
 
-.cesta{
-    background-color:#DFF4FB ;
+.cesta {
+    background-color: #DFF4FB;
     border-radius: 50px;
     width: 80%;
     margin-left: auto;
@@ -41,58 +44,18 @@ body {
     margin-top: 20px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-   
-    
 }
-.lista{
+
+.lista {
     margin-right: 10px;
-    float:right;
+    float: right;
     margin-right: auto;
-    margin-bottom :20px;
+    margin-bottom: 20px;
     line-height: 80px;
     list-style: none;
     display: flex;
     width: 30%;
     justify-content: space-evenly;
-    
-}
-
-  
-   nav{
-       background-color: #F8D8F0;
-        width: 80%;
-       margin-left: auto;
-       margin-right: auto;
-       margin-top: 30px;
-       border-radius: 60px;
-       text-align: center;
-       line-height: 20;
-       
-   }
-   nav ul {
-       margin: 0;
-       padding: 0;
-       list-style: none;
-       line-height: 60px;
-       justify-content: space-evenly;
-   }
-   nav li{
-       display:inline
-   }
-   
-   .barra{
-    background-color:#d3c5ff;
-    border-radius: 50px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav{
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -101,11 +64,66 @@ body {
     justify-content: space-evenly;
 }
 
-.txt{
+nav {
+    background-color: #F8D8F0;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 20;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 60px;
+    justify-content: space-evenly;
+}
+
+nav li {
+    display: inline
+}
+
+.barra {
+    background-color: #d3c5ff;
+    border-radius: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.txt {
     font-size: x-large;
-    background-color:#d3c5ff ;
     border-radius: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 .galeria {
     display: flex;
     width: 80%;
@@ -114,42 +132,59 @@ body {
     margin-right: auto;
     margin-top: 2%;
 }
-.fotos{
+
+.fotos {
     width: 0px;
     flex-grow: 1;
     object-fit: cover;
     opacity: 8;
     transition: 0.5s ease;
-    
+
 }
-.fotos:hover{
-  
+
+.fotos:hover {
+
     width: 300px;
     opacity: 1;
     filter: contrast(120%);
 }
 
-#izq{
+#izq {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
 
-#der{
+#der {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-a:visited{
+a:visited {
     text-decoration: none;
     color: inherit;
 }
-.frase{
+
+.frase {
     text-align: center;
-    
+
 }
 
+.animo {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #b4a1f4;
+    border-radius: 50px;
+    height: 80px;
+    text-decoration: none;
+    color: inherit;
+    font-size: xx-large;
+}
