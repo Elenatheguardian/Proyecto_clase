@@ -16,13 +16,10 @@ public class Usuario {
 	private int permiso;
 	private String direccion;
 
-
 	public Usuario() {
 
 	}
-	
-	
-	
+
 	public Usuario(int id, String nombre, String mail, int tel, String direccion) {
 		super();
 		this.id = id;
@@ -32,8 +29,6 @@ public class Usuario {
 		this.direccion = direccion;
 	}
 
-
-
 	public Usuario(String nombre, String mail, int tel, String direccion) {
 		super();
 		this.nombre = nombre;
@@ -41,7 +36,6 @@ public class Usuario {
 		this.tel = tel;
 		this.direccion = direccion;
 	}
-
 
 	public Usuario(String nombre, String mail, int tel, int permiso, String direccion) throws SQLException {
 		this.nombre = nombre;
@@ -121,84 +115,77 @@ public class Usuario {
 		DaoUsuario dao = new DaoUsuario();
 		dao.insertarUs(this);
 	}
-	
-	public static String getMD5(String input) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] messageDigest = md.digest(input.getBytes());
-            BigInteger number = new BigInteger(1, messageDigest);
-            String hashtext = number.toString(16);
 
-            while (hashtext.length() < 32) {
-                hashtext = "0" + hashtext;
-            }
-            return hashtext;
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-	
+	public static String getMD5(String input) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] messageDigest = md.digest(input.getBytes());
+			BigInteger number = new BigInteger(1, messageDigest);
+			String hashtext = number.toString(16);
+
+			while (hashtext.length() < 32) {
+				hashtext = "0" + hashtext;
+			}
+			return hashtext;
+		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public void guardarPass(String pass) throws SQLException {
-        DaoUsuario dao = new DaoUsuario();
-        dao.guardarPass(this, pass);
-    }
-	
-	
+		DaoUsuario dao = new DaoUsuario();
+		dao.guardarPass(this, pass);
+	}
+
 	public String dameJson() {
 		String json = "";
-		
+
 		Gson gson = new Gson();
-		
+
 		json = gson.toJson(this);
 		return json;
 	}
-	
-	
+
 	public void borrarAdmin(int id) throws SQLException {
 		DaoUsuario dao = new DaoUsuario();
 		dao.borrarAdmin(id);
 	}
 
-	
-	  public void recogerPorId(int id) throws SQLException {
-	  
-	  DaoUsuario dao = new DaoUsuario();
-	  Usuario aux= dao.recogerPorId(id);
+	public void recogerPorId(int id) throws SQLException {
 
-	  this.setId(aux.getId()); 
-	  this.setNombre(aux.getNombre());
-	  this.setMail(aux.getMail()); 
-	  this.setTel(aux.getTel());
-	  this.setDireccion(aux.getDireccion()); 
-	  
-	  }
-	  
-	  public void editar() throws SQLException {
-		  System.out.println("aqui");
-		  DaoUsuario dao = new DaoUsuario();
-		  dao.editar(this);
-	  }
-	  
-	  public boolean inicioSesion(String passcifrada) throws SQLException {
+		DaoUsuario dao = new DaoUsuario();
+		Usuario aux = dao.recogerPorId(id);
 
-	        boolean bien = false;
+		this.setId(aux.getId());
+		this.setNombre(aux.getNombre());
+		this.setMail(aux.getMail());
+		this.setTel(aux.getTel());
+		this.setDireccion(aux.getDireccion());
 
-	        DaoUsuario dao = new DaoUsuario();
-	        Usuario aux = dao.inicioSesion(this, passcifrada);
+	}
 
-	        if(aux != null) {
-	            bien = true;
-	            this.setId(aux.getId());
-	            this.setNombre(aux.getNombre());
-	            this.setMail(aux.getMail());
-	            this.setPermiso(aux.getPermiso());
+	public void editar() throws SQLException {
+		DaoUsuario dao = new DaoUsuario();
+		dao.editar(this);
+	}
 
-	        }
+	public boolean inicioSesion(String passcifrada) throws SQLException {
 
-	        return bien;
+		boolean bien = false;
 
-	    }
-	  
-	
-	
+		DaoUsuario dao = new DaoUsuario();
+		Usuario aux = dao.inicioSesion(this, passcifrada);
+		if (aux != null) {
+			bien = true;
+			this.setId(aux.getId());
+			this.setNombre(aux.getNombre());
+			this.setMail(aux.getMail());
+			this.setPermiso(aux.getPermiso());
+
+		}
+
+		return bien;
+
+	}
+
 }

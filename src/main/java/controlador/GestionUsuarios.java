@@ -18,29 +18,33 @@ import dao.DaoUsuario;
  */
 public class GestionUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GestionUsuarios() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-				
+	public GestionUsuarios() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
 		String idstring = request.getParameter("id");
 		int id = 0;
 		String nombre = request.getParameter("nombre");
@@ -49,37 +53,31 @@ public class GestionUsuarios extends HttpServlet {
 		String direccion = request.getParameter("direccion");
 		int permiso = Integer.parseInt(request.getParameter("permiso"));
 		String pass = request.getParameter("pass");
-		
+
 		String passcifrada = Usuario.getMD5(pass);
-		if(idstring != null && !idstring.isEmpty()) {
+		if (idstring != null && !idstring.isEmpty()) {
 			id = Integer.parseInt(idstring);
 		}
-		
-		
-		try {
-		Usuario	ps = new Usuario (id, nombre, mail, tel, permiso, direccion );
-		
-		if(id==0) {
-			ps.insertarUs();
-			ps.guardarPass(passcifrada);
-			
 
-		}else {
-			ps.editar();
-			ps.guardarPass(passcifrada);
-			
-		}
-	
-			
-			
+		try {
+			Usuario ps = new Usuario(id, nombre, mail, tel, permiso, direccion);
+
+			if (id == 0) {
+				ps.insertarUs();
+				ps.guardarPass(passcifrada);
+
+			} else {
+				ps.editar();
+				ps.guardarPass(passcifrada);
+
+			}
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		response.sendRedirect("index.html");
-		
-		
-		
+
 	}
 
 }

@@ -19,49 +19,49 @@ public class permisos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HttpSession sesion;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public permisos() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public permisos() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int idsesion = 0; 
-        int permisosesion = 0; 
-		
-		
-		
-        HttpSession sesion = request.getSession(false); 
+		int idsesion = 0;
+		int permisosesion = 0;
 
-        if (sesion != null && sesion.getAttribute("id") != null) {
-        	
-            idsesion = (int) sesion.getAttribute("id"); 
-            
-            permisosesion = sesion.getAttribute("permiso") != null ? (int) sesion.getAttribute("permiso") : 0;
-        }
+		HttpSession sesion = request.getSession(false);
 
-        Sesion datos = new Sesion(idsesion, permisosesion);
-        
-        Gson gson = new Gson();
-        
-        response.setContentType("application/json");
-        
-        response.getWriter().write(gson.toJson(datos));
-       
-        
-    }
-		
+		if (sesion != null && sesion.getAttribute("id") != null) {
+
+			idsesion = (int) sesion.getAttribute("id");
+
+			permisosesion = sesion.getAttribute("permiso") != null ? (int) sesion.getAttribute("permiso") : 0;
+		}
+
+		Sesion datos = new Sesion(idsesion, permisosesion);
+
+		Gson gson = new Gson();
+
+		response.setContentType("application/json");
+
+		response.getWriter().write(gson.toJson(datos));
+
+	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

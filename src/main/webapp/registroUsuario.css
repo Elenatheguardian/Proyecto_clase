@@ -1,159 +1,159 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background-color: #faf3f5 ;
+	background-color: #faf3f5;
 }
 
 .head {
-    background-color: #DFF4FB;
-    width: 90%;
-    margin: 25px auto;
-    border-radius: 50px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-   
+	background-color: #DFF4FB;
+	width: 90%;
+	margin: 25px auto;
+	border-radius: 50px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+
 }
 
 .logo {
-    width: 250px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 250px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .logoimg {
-    width: 200px;
-    height: 150px;
+	width: 200px;
+	height: 150px;
 }
 
 .cesta {
-    background-color: #DFF4FB;
-    border-radius: 50px;
-    width: 80%;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	background-color: #DFF4FB;
+	border-radius: 50px;
+	width: 80%;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .lista {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+	align-items: center;
+	list-style: none;
 }
 
 nav {
-    background-color: #faf3f5;
-    width: auto;
-    margin: 20px auto;
-    border-radius: 60px;
-    text-align: center;
+	background-color: #faf3f5;
+	width: auto;
+	margin: 20px auto;
+	border-radius: 60px;
+	text-align: center;
 }
 
 nav ul {
-    list-style: none;
-    line-height: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
+	list-style: none;
+	line-height: 60px;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 0;
 }
 
 nav li {
-    display: inline;
+	display: inline;
 }
 
 .barra {
-    background-color: #d3c5ff;
-    border-radius: 50px;
-    width: 80%;
-    margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	background-color: #d3c5ff;
+	border-radius: 50px;
+	width: 80%;
+	margin: 20px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    list-style: none;
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+	list-style: none;
 }
 
 .txt {
-    font-size: x-large;
-    border-radius: 10px;
+	font-size: x-large;
+	border-radius: 10px;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 a:visited {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 
 .registrAdmin-class {
-    width: 80%;
-    background-color: #faf3f5;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 50px;
-    font-size: x-large;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	width: 80%;
+	background-color: #faf3f5;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 50px;
+	font-size: x-large;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 form#registro {
-    width: 100%;
-    max-width: 600px;
+	width: 100%;
+	max-width: 600px;
 }
 
 form#registro ul {
-    list-style: none;
-    padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 form#registro li {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
 }
 
 form#registro label {
-    margin-bottom: 5px;
-    font-size: 1.2em;
+	margin-bottom: 5px;
+	font-size: 1.2em;
 }
 
 form#registro input[type="text"],
 form#registro input[type="email"],
 form#registro input[type="password"] {
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #b8a0ff;
-    border-radius: 5px;
+	padding: 10px;
+	font-size: 1em;
+	border: 2px solid #b8a0ff;
+	border-radius: 5px;
 }
 
 form#registro input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #d3c5ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	background-color: #d3c5ff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 form#registro input[type="submit"]:hover {
-    background-color: #b8a0ff;
+	background-color: #b8a0ff;
 }

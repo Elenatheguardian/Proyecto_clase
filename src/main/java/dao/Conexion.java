@@ -7,12 +7,12 @@ import java.util.Properties;
 
 public class Conexion {
 
-	public static final String JDBC_URL ="jdbc:mysql://localhost:3306/proyectobullet";
+	public static final String JDBC_URL = "jdbc:mysql://localhost:3306/proyectobullet";
 	public static Connection instance = null;
-	
+
 	public static Connection getConexion() throws SQLException {
-		
-		if(instance == null) {
+
+		if (instance == null) {
 			Properties props = new Properties();
 			props.put("user", "root");
 			props.put("password", "");
@@ -21,7 +21,5 @@ public class Conexion {
 		}
 		return instance;
 	}
-	
-	
-	
+
 }

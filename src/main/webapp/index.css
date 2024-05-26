@@ -188,3 +188,13 @@ a:visited {
     color: inherit;
     font-size: xx-large;
 }
+
+#cerrar{
+	display:none;
+}
+#admin{
+	display:none;
+}
+#productos{
+	display:none;
+}
