@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				const botonLogin = document.getElementById('sesion');
 				const insertarProd = document.getElementById('productos');
 				const insertarAdmin = document.getElementById('admin');
+				const lista = document.getElementById('listar');
 				const botonCerrar = document.getElementById('cerrar');
 
 
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					if (permiso >= 7) {
 						insertarProd.style.display = 'block';
 						insertarAdmin.style.display = 'block';
+						lista.style.display = 'block';
 					} else {
 						insertarProd.style.display = 'none';
 						insertarAdmin.style.display = 'none';
@@ -74,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					insertarProd.style.display = 'none';
 					insertarAdmin.style.display = 'none';
 					botonCerrar.style.display = 'none';
+					lista.style.display = 'none';
 				}
 
 

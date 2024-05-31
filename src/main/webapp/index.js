@@ -11,30 +11,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 const permiso = data.permiso;
                 const id = data.id;
 
-                const botonLogin = document.getElementById('sesion');
-                const insertarProd = document.getElementById('productos');
-                const insertarAdmin = document.getElementById('admin');
-                const botonCerrar = document.getElementById('cerrar');
+				const botonLogin = document.getElementById('sesion');
+				const insertarProd = document.getElementById('productos');
+				const insertarAdmin = document.getElementById('admin');
+				const lista = document.getElementById('listar');
+				const botonCerrar = document.getElementById('cerrar');
 
 
-                if (id > 0) {
-                    console.log('Usuario logueado');
-                    botonLogin.style.display = 'none';
-                    botonCerrar.style.display = 'block';
-                    if (permiso >= 7) {
-                        insertarProd.style.display = 'block';
-                        insertarAdmin.style.display = 'block';
-                    } else {
-                        insertarProd.style.display = 'none';
-                        insertarAdmin.style.display = 'none';
-                    }
-                } else {
-                    console.log('Usuario no logueado');
-                    botonLogin.style.display = 'block';
-                    insertarProd.style.display = 'none';
-                    insertarAdmin.style.display = 'none';
-                    botonCerrar.style.display = 'none';
-                }
+				if (id > 0) {
+					console.log('Usuario logueado');
+					botonLogin.style.display = 'none';
+					botonCerrar.style.display = 'block';
+					if (permiso >= 7) {
+						insertarProd.style.display = 'block';
+						insertarAdmin.style.display = 'block';
+						lista.style.display = 'block';
+					} else {
+						insertarProd.style.display = 'none';
+						insertarAdmin.style.display = 'none';
+					}
+				} else {
+					console.log('Usuario no logueado');
+					botonLogin.style.display = 'block';
+					insertarProd.style.display = 'none';
+					insertarAdmin.style.display = 'none';
+					botonCerrar.style.display = 'none';
+					lista.style.display = 'none';
+				}
 
               
             })

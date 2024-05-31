@@ -149,4 +149,24 @@
     <servlet-name>cerrarSesion</servlet-name>
     <url-pattern>/cerrarSesion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>borrar</display-name>
+    <servlet-name>borrar</servlet-name>
+    <servlet-class>controlador.borrar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>borrar</servlet-name>
+    <url-pattern>/borrar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>borrarP</display-name>
+    <servlet-name>borrarP</servlet-name>
+    <servlet-class>controlador.borrarP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>borrarP</servlet-name>
+    <url-pattern>/borrarP</url-pattern>
+  </servlet-mapping>
 </web-app>

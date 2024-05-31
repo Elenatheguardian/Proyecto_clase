@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	
+<meta charset="ISO-8859-1">
+<title>Borrar Producto</title>
+</head>
+
+<body>
+
+<div class="product-container">
+  <div class="product" data-product-id="1">
+    <span>Producto</span>
+    <button id="borrar" class="common-styles delete-button">Borrar</button>
+  </div>
+  
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        const productElement = event.target.closest('.product');
+        const productId = productElement.getAttribute('data-product-id');
+
+   
+        productElement.remove();
+
+        console.log(`Se ha eliminado`);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

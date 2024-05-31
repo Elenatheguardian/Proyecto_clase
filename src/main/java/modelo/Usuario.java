@@ -6,7 +6,15 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import com.google.gson.*;
 import dao.DaoUsuario;
-
+/**
+ * Esta clase es donde se guardara los datos de los Usuarios.
+ * @author Elena Alexandru
+ * @version 4.2
+ */
+/**
+ * Este es el constructor de el Usuario, recoge los datos necesarios para poder guardarlos y que tengan luego acceso.
+ * Hay constructores con id y sin id. El con id es el usuario que se va ha registrar y el con id es el usuario registrado.
+ */
 public class Usuario {
 
 	private int id;
