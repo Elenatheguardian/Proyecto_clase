@@ -14,7 +14,7 @@ function productos() {
 		}
 	};
 
-	xhr.open("GET", "ListarProductos", false);
+	xhr.open("GET", "ListarPapeleria", false);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send();
 
@@ -33,7 +33,7 @@ function listarprod(producto) {
 		var div = document.createElement('div');
 		div.className = 'productos';
 
-		div.innerHTML = '<img class="fotos1" src="fotos_productos/' + producto.foto + '"> <span class="titulo">' + producto.titulo + '</span><p class="descripcion">' + producto.descripcion + '</p><span class="precio">' + producto.precio + '</span><button id="editar"><a href="anadirproductos.html?id=' + producto.id + '">Editar</a></button><button id ="borrar"><a href="javascript:borrar(' + producto.id + ')">Borrar</a></button>';
+		div.innerHTML = '<img class="fotos1" src="fotos_productos/' + producto.foto + '"> <span class="titulo">' + producto.titulo + '</span><p class="descripcion">' + producto.descripcion + '</p><span class="precio">' + producto.precio + '</span><button id="editar"><a href="anadirproductos.html?id=' + producto.id + '">Editar</a></button><button id ="borrar"><a href="javascript:borrarProducto(' + producto.id + ')">Borrar</a></button>';
 
 		section.insertBefore(div, section.firstChild);
 	} else {
@@ -52,7 +52,7 @@ if (datosProductos) {
 
 function borrarProducto(id) {
 	if (confirm("¿Estás seguro?")) {
-		fetch('ProductosBorrar?id=' + id)
+		fetch('borrarP?id=' + id)
 		window.location.reload();
 	}
 }
@@ -120,25 +120,30 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 });
 
+function botones() {
+	fetch('permisos')
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			const permiso = data.permiso;
+			const botones = document.querySelectorAll('button');
 
+			botones.forEach(button => {
+				if (permiso >= 7) {
+					button.style.display = 'block'
+				} else {
+					button.style.display = 'none'
+				}
 
-
-
-
-if (datosProductos) {
-	datosProductos.forEach(function(producto) {
-		listarprod(producto);
-	})
-} else {
-	console.error("Ha habido un fallo con los productos")
+			})
+})
 }
 
+document.addEventListener("DOMContentLoaded", botones)
 
-function borrarProducto(id) {
-	if (confirm("¿Estás seguro?")) {
-		fetch('ProductosBorrar?id=' + id)
-		window.location.reload();
-	}
-}
+
+
+
 
 

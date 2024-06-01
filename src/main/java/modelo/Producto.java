@@ -6,6 +6,12 @@ import com.google.gson.Gson;
 
 import dao.DaoProducto;
 
+/**
+ * Esta clase define objetos Productos
+ * @author Elena Alexandru
+ * @version 4.2
+ */
+
 public class Producto {
 
 	private int id;
@@ -19,6 +25,14 @@ public class Producto {
 
 	}
 
+	/**
+	 * constructor con 4 parametros
+	 * 
+	 * @param nombre      nombre del producto
+	 * @param tipo        tipo de producto
+	 * @param descripcion descripcion del producto
+	 * @parm precio precio del producto
+	 */
 	public Producto(String nombre, String tipo, String descripcion, int precio) {
 		super();
 		this.nombre = nombre;
@@ -27,6 +41,15 @@ public class Producto {
 		this.precio = precio;
 	}
 
+	/**
+	 * constructor con 5 parametros
+	 * 
+	 * @param id          id del producto
+	 * @param nombre      nombre del producto
+	 * @param tipo        tipo de producto
+	 * @param descripcion descripcion del producto
+	 * @param precio      precio del producto
+	 */
 	public Producto(int id, String nombre, String tipo, String descripcion, int precio) {
 		super();
 		this.id = id;
@@ -36,6 +59,15 @@ public class Producto {
 		this.precio = precio;
 	}
 
+	/**
+	 * constructor con 4 parametros
+	 * 
+	 * @param nombre      nombre del producto
+	 * @param tipo        tipo de producto
+	 * @param descripcion descripcion del producto
+	 * @param foto        foto del producto
+	 * @param precio      precio del producto
+	 */
 	public Producto(String nombre, String tipo, String descripcion, String foto, int precio) {
 		super();
 		this.nombre = nombre;
@@ -45,6 +77,16 @@ public class Producto {
 		this.precio = precio;
 	}
 
+	/**
+	 * constructor con 6 parametros
+	 * 
+	 * @param id          id del producto
+	 * @param nombre      nombre del producto
+	 * @param tipo        tipo de producto
+	 * @param descripcion descripcion del producto
+	 * @param foto        foto del producto
+	 * @param precio      precio del producto
+	 */
 	public Producto(int id, String nombre, String tipo, String descripcion, String foto, int precio) {
 		super();
 		this.id = id;
@@ -109,16 +151,29 @@ public class Producto {
 				+ ", foto=" + foto + ", precio=" + precio + "]";
 	}
 
+	/**
+	 * Este metodo llama a la clase DaoProducto para insertar un objeto en la bd
+	 * 
+	 * @throws SQLException
+	 */
+
 	public void insertar() throws SQLException {
 
 		DaoProducto dao = new DaoProducto();
 		dao.insertar(this);
 	}
 
+	/**
+	 * Recupera los datos de un producto de la base de datos y establece los atributos 
+	 * correspondientes del objeto actual basado en el ID del producto 
+	 * @param id El ID del producto que se desea recuperar.
+	 * @throws SQLException 
+	 */
+
 	public void datosBD(int id) throws SQLException {
 		DaoProducto dao = new DaoProducto();
 		Producto aux = dao.obtenerPorId(id);
-		System.out.println("hola333" + aux);
+		// System.out.println("hola333" + aux);
 		this.setId(aux.getId());
 		this.setNombre(aux.getNombre());
 		this.setTipo(aux.getTipo());
@@ -126,17 +181,32 @@ public class Producto {
 		this.setFoto(aux.getFoto());
 		this.setPrecio(aux.getPrecio());
 	}
+	/**
+	 * Edita los datos del producto en la base de datos utilizando los atributos 
+	 * del objeto 
+	 *
+	 * @throws SQLException 
+	 */
 
 	public void editar() throws SQLException {
 		DaoProducto dao = new DaoProducto();
 		dao.productosEditar(this);
 	}
 
+	/**
+	 * Borra un producto de la base de datos basado en el ID proporcionado.
+	 * @param id  ID del producto que se desea borrar.
+	 * @throws SQLException .
+	 */
 	public void borrar(int id) throws SQLException {
 		DaoProducto dao = new DaoProducto();
 		dao.productosBorrar(id);
 	}
 
+	/**
+	 * Convierte el objeto actual a su representación en formato JSON.
+	 * @return Una cadena de texto en formato JSON que representa el objeto actual.
+	 */
 	public String dameJson() {
 		String json = "";
 		Gson gson = new Gson();
@@ -145,5 +215,4 @@ public class Producto {
 		return json;
 	}
 
-	}
-
+}

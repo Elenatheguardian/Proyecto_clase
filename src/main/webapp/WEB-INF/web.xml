@@ -169,4 +169,24 @@
     <servlet-name>borrarP</servlet-name>
     <url-pattern>/borrarP</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarAgenda</display-name>
+    <servlet-name>ListarAgenda</servlet-name>
+    <servlet-class>controlador.ListarAgenda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarAgenda</servlet-name>
+    <url-pattern>/ListarAgenda</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarPapeleria</display-name>
+    <servlet-name>ListarPapeleria</servlet-name>
+    <servlet-class>controlador.ListarPapeleria</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarPapeleria</servlet-name>
+    <url-pattern>/ListarPapeleria</url-pattern>
+  </servlet-mapping>
 </web-app>

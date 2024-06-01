@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+/**
+ * La clase Conexion proporciona una conexión única a la base de datos MySQL.
+ * @author Elena Alexandru
+ * @version 4.2
+ */
 
 public class Conexion {
 

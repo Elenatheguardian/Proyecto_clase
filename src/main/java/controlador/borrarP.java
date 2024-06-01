@@ -34,7 +34,24 @@ public class borrarP extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		       
+		
+		String id = request.getParameter("id");
+		
+		Producto p = new Producto();
+		if(id != null) {
+			int idp = Integer.parseInt(id);
+			try {
+				p.borrar(idp);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("Ha ocurrido un error");
+		}
+		    
+		
+		
 		}
 
 	/**

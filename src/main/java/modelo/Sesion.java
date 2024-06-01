@@ -1,5 +1,12 @@
 package modelo;
 
+/**
+ * Esta clase crea objetos Sesion
+ * @author Elena Alexandru
+ * @version 4.2
+ */
+
+
 public class Sesion {
 
 	private int id;
