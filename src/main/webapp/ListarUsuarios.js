@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					console.log('Usuario logueado');
 					botonLogin.style.display = 'none';
 					botonCerrar.style.display = 'block';
+					botonAdmin.style.dyplay= 'block'
 					if (permiso >= 7) {
 						insertarProd.style.display = 'block';
 						insertarAdmin.style.display = 'block';
